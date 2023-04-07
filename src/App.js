@@ -43,6 +43,10 @@ function App() {
     }
   }
   const onSubmit = (data) => {
+    if (!birthdate) {
+      setBirthdateError('Birth date is required.');
+      return;
+    }
 
     const totalData = { ...data, birthdate, id, image }
     setAllData((prevUserData) => {
@@ -50,10 +54,7 @@ function App() {
     })
 
 
-    if (!birthdate) {
-      setBirthdateError('Birth date is required.');
-      return;
-    }
+    
     reset();
     setBirthdate('')
   }
