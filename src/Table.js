@@ -20,7 +20,9 @@ const Table = (props) => {
 
         <tr className="border-b dark:border-neutral-500 ">
 
-
+            <td class="whitespace-nowrap px-6 py-6  sm:text-lg lg:text-2xl font-mono  " onClick={photoHandler} >
+                <img src={props.img} alt="no img" className="rounded-full w-44" />
+            </td>
             <td class="whitespace-nowrap px-6 py-6  sm:text-lg lg:text-2xl font-mono " onClick={photoHandler} >{props.name}</td>
             <td class="whitespace-nowrap px-6 py-6  sm:text-lg lg:text-2xl font-mono" onClick={photoHandler}>{props.dateOfBirth}</td>
             <td class="whitespace-nowrap px-6 py-6  sm:text-lg lg:text-2xl font-mono" onClick={photoHandler}>{props.address}</td>

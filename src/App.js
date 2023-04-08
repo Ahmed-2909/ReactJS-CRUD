@@ -43,9 +43,19 @@ function App() {
     }
   }
   //form subit 
-  const onSubmit = (data) => {
+  const brithDayValidation = () => {
     if (!birthdate) {
       setBirthdateError('Birth date is required.');
+      console.log("in the  br ", birthdate)
+      return;
+    }
+  }
+  const onSubmit = (data) => {
+    console.log("in the on Submit ", birthdate)
+    console.log("data ", data)
+    if (!birthdate) {
+      setBirthdateError('Birth date is required.');
+      console.log("in the  br ", birthdate)
       return;
     }
 
@@ -55,7 +65,7 @@ function App() {
     })
 
 
-    
+
     reset();
     setBirthdate('')
   }
@@ -139,7 +149,7 @@ function App() {
             className='w-[40vw] shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:p-3'
             {...register("Area", { required: true, minLength: 5 })}
           />
-          {errors.Area && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'>Area Should be 2 Character Long</p>}
+          {errors.Area && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'>Area Should be 5 Character Long</p>}
           <lable className='font-bold'>Place of birth</lable>
           <input
             placeholder='Place of birth'
@@ -148,7 +158,7 @@ function App() {
             className='w-[40vw] shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:p-3'
             {...register("PlaceOfBirth", { required: true, minLength: 5 })}
           />
-          {errors.PlaceOfBirth && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'> Place Of Birth Should be 2 Character Long</p>}
+          {errors.PlaceOfBirth && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'> Place Of Birth Should be 5 Character Long</p>}
           <lable className='font-bold'>Phone number</lable>
           <input
             placeholder='Phone number'
@@ -164,13 +174,15 @@ function App() {
 
           <button type='submit' className='relative top-7 bg-blue-500 p-4 space-y-7  rounded-lg text-white shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] hover:text-blue-500 hover:bg-white  ' style={{
             marginTop: "40px !important"
-          }}>Submit</button>
+          }}
+            onClick={brithDayValidation}
+          > Submit </button>
         </form>
 
       </div>
 
       {/* table */}
-      
+
       <div className='flex flex-col  lg:flex-row'>
         {visibal && <PhotoCard name={photoCardData.firstName + "" + photoCardData.LestName} img={photoCardData.image} phoneNumber={photoCardData.PhoneNumber}
           onRemove={removePhotoHandler} />}
@@ -179,7 +191,7 @@ function App() {
           <table className=" shadow-lg bg-white  rounded-xl w-full mx-auto table-auto sm:text-lg lg:text-2xl  ">
             <thead className="border-b font-medium dark:border-neutral-500 ">
               <tr>
-
+                <th scope="col" className="px-6 py-4">Profile Pic</th>
                 <th scope="col" className="px-6 py-4">Name</th>
                 <th scope="col" className="px-6 py-4">Date Of Birth</th>
                 <th scope="col" className="px-6 py-4">Address</th>
@@ -204,6 +216,7 @@ function App() {
                 onEdit={tableEidtHandler}
                 onPhoto={photoHandler}
                 id={item.id}
+                img={item.image}
               />))}
 
             </tbody>
