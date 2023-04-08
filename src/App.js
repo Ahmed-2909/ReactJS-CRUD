@@ -42,6 +42,7 @@ function App() {
       setBirthdate(event.target.value);
     }
   }
+  //form subit 
   const onSubmit = (data) => {
     if (!birthdate) {
       setBirthdateError('Birth date is required.');
@@ -167,6 +168,9 @@ function App() {
         </form>
 
       </div>
+
+      {/* table */}
+      
       <div className='flex flex-col  lg:flex-row'>
         {visibal && <PhotoCard name={photoCardData.firstName + "" + photoCardData.LestName} img={photoCardData.image} phoneNumber={photoCardData.PhoneNumber}
           onRemove={removePhotoHandler} />}
