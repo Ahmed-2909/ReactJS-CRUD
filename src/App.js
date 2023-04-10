@@ -169,7 +169,7 @@ function App() {
           />
           {errors.PhoneNumber && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'>Phone Number Should be 10 Character Long</p>}
           <label className='font-bold'>Profile pic</label>
-          <input type='file' name='ProfilePic' onChange={handleImageChange}
+          <input type='file' accept="image/*" name='ProfilePic' onChange={handleImageChange}
             className='w-[40vw] shadow-[0_3px_10px_rgb(0,0,0,0.2)] mb-4' />
 
           <button type='submit' className='relative top-7 bg-blue-500 p-4 space-y-7  rounded-lg text-white shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] hover:text-blue-500 hover:bg-white  ' style={{
