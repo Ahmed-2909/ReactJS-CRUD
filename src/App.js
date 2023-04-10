@@ -138,9 +138,9 @@ function App() {
             type="text"
             name='HouseNo'
             className='w-[40vw] shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:p-3'
-            {...register("HouseNo", { required: true, minLength: 2 })}
+            {...register("HouseNo", { required: true, minLength: 5 })}
           />
-          {errors.HouseNo && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'>House No Should be 2 Character Long</p>}
+          {errors.HouseNo && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'>House No Should be 5 Character Long</p>}
           <lable className='font-bold'>Area/Locality</lable>
           <textarea
             placeholder='Area/Locality'
@@ -156,9 +156,9 @@ function App() {
             type="text"
             name='PlaceOfBirth'
             className='w-[40vw] shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:p-3'
-            {...register("PlaceOfBirth", { required: true, minLength: 5 })}
+            {...register("PlaceOfBirth", { required: true, minLength: 2 })}
           />
-          {errors.PlaceOfBirth && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'> Place Of Birth Should be 5 Character Long</p>}
+          {errors.PlaceOfBirth && <p className='text-red-600 text-xs sm:text-lg lg:text-2xl font-mono'> Place Of Birth Should be 2 Character Long</p>}
           <lable className='font-bold'>Phone number</lable>
           <input
             placeholder='Phone number'
